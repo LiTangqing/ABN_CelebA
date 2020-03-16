@@ -18,7 +18,7 @@ class CelebA_Dataset(chainer.dataset.DatasetMixin):
         self.cfg_mod = cfg_mod
         self.dataset = []
 
-        print 'Converting CelebA Dataset...'
+        print('Converting CelebA Dataset...')
         if self.train:
             label = cfg_mod.train_data
         else:
@@ -35,8 +35,8 @@ class CelebA_Dataset(chainer.dataset.DatasetMixin):
                     img_full_path = path.join(cfg_mod.data_img_dir, ipath)
                     self.dataset.append([img_full_path, att_data[idx + 1]])
 
-        print '  - # of samples :', len(self.dataset)
-        print '\n'
+        print('  - # of samples :', len(self.dataset))
+        print('\n')
 
 
     def convert_attribute(self, ann_path):

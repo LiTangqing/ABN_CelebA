@@ -103,7 +103,7 @@ if __name__ == '__main__':
     f_txt = open(path.join(result_folder, 'recog_result.txt'), 'w')
     xp = cuda.cupy if cfg_mod.GPU_FLAG >= 0 and cuda.available else np
     for index_sample in range(sample_num):
-        print 'Loading data :', test_data.get_path(index_sample), index_sample
+        print('Loading data :', test_data.get_path(index_sample), index_sample)
         v_img = cv2.imread(test_data.get_path(index_sample))
         v_img = cv2.resize(v_img, (cfg_mod.INPUT_COLS, cfg_mod.INPUT_ROWS))
 
@@ -150,10 +150,10 @@ if __name__ == '__main__':
     acc_f = open(path.join(result_folder, 'accuracy.txt'), 'w')
     for index_acc, item_acc in enumerate(att_acc):
         acc_f.write(str(item_acc * 100) + '\n')
-        print class_name[index_acc], ' : ', item_acc * 100, '%'
+        print (class_name[index_acc], ' : ', item_acc * 100, '%')
 
     # normalize_confusion_matrix(raw_c_matrix, result_folder, cfg_mod.CLASS)
-    print 'Average accuracy :', np.mean(att_acc) * 100, '%'
+    print ('Average accuracy :', np.mean(att_acc) * 100, '%')
 
 
 
