@@ -21,7 +21,7 @@ import cv2
 from celeba import CelebA_Dataset
 from os import path
 from glob import glob
-import cPickle as pickle
+import _pickle as pickle
 
 
 def parse_arguments():
